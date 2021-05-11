@@ -41,7 +41,7 @@
 (defun convertK->unit (unit)
   "Returns functions to convert from Kelvin to the unit specified."
   (case unit
-    (:F (lambda (temp) (+ 32 (/ (* 9 (funcall (convertK->unit :C) temp) 5)))))
+    (:F (lambda (temp) (+ 32 (/ (* 9 (funcall (convertK->unit :C) temp)) 5))))
     (:C (lambda (temp) (- temp 273.15)))
     (t (lambda (temp) temp))))
 

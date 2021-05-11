@@ -5,10 +5,11 @@ This is a library to fetch the current weather from the OpenWeather API.
 ** Usage
 
 #+BEGIN_SRC lisp
-(defvar *weather-client* (cl-weather-lib:make-weather-client "YOURAPIKEY"))
-(defvar *weather-location* "philadelphia")
-(defvar *current-weather* (cl-weather-lib:current-weather *weather-client* *weather-location*))
-(format t "The current temperature in ~A is ~D.~%" *weather-location* (cl-weather-lib:current-temp *current-weather*)
+  (defvar *weather-client* (cl-weather-lib:make-weather-client "YOURAPIKEY"))
+  (defvar *weather-location* "philadelphia")
+  (defvar *current-weather*
+    (cl-weather-lib:current-weather *weather-client* *weather-location*))
+  (format t "The current temperature in ~A is ~D degrees F.~%"
+          ,*weather-location*
+          (cl-weather-lib:current-temp *current-weather*))
 #+END_SRC
-
-** Installation
